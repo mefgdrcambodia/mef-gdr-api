@@ -1,0 +1,15 @@
+const checkValidtion = (res, req, requiredFields) => {
+  for (let field of requiredFields) {
+    if (!req.body[field.key]) {
+      res.status(400).send({
+        success: false,
+        message: `field ${field.label} is required`,
+      });
+      return true; // ❗ important → stop controller
+    }
+  }
+
+  return false; // ✅ no error
+};
+
+module.exports = checkValidtion;
