@@ -345,7 +345,7 @@ const route = (prop) => {
 
   // DELETE news by ID
   prop.app.delete(
-    `${urlAPI_create_update_delete}delete/:id`, // Keep :id for DELETE
+    `${urlAPI_create_update_delete}/delete/:id`, // Keep :id for DELETE
     prop.api_auth,
     prop.jwt_auth,
     prop.request_user,
